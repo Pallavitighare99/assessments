@@ -1,0 +1,140 @@
+<div class="container"><br><br><br>
+    <form #register="ngForm">
+        <table><br>
+            <div class="title">
+                <h1>REGISTRATION FORM</h1>
+            </div>
+
+            <!----------------1row-------------->
+            <br>
+            <div class="input">
+                <input type="text" class="form-control" placeholder="Enter your Email" name="email" autocomplete="off"
+                    required [(ngModel)]="userRegister.email" #email="ngModel"
+                    [class.is-invalid]="email.invalid && email.touched">
+                <span *ngIf="email.invalid && email.touched" class="input-group-addon"></span>
+                <small *ngIf="email.invalid && email.touched" class="text-danger">
+                    Email is required
+                </small>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+
+            <!---------------2row------------ -->
+            <br>
+            <div class="input">
+                <input type="password" class="form-control" placeholder="Enter Password" name="password"
+                    autocomplete="off" required [(ngModel)]="userRegister.password" #password="ngModel"
+                    [class.is-invalid]="password.invalid && password.touched">
+                <span *ngIf="password.invalid && password.touched" class="input-group-addon"></span>
+                <small *ngIf="password.invalid && password.touched" class="text-danger">
+                    Password is required
+                </small>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            </div>
+
+            <!------------------3row ---------------->
+            <br>
+            <div class="input">
+                <input type="password" class="form-control" placeholder="Re-Type Password" name="retype"
+                    autocomplete="off" required [(ngModel)]="userRegister.retype" #retype="ngModel"
+                    [class.is-invalid]="retype.invalid && retype.touched">
+                <span *ngIf="retype.invalid && retype.touched" class="input-group-addon"></span>
+                <small *ngIf="retype.invalid && retype.touched" class="text-danger">
+                    Retype Password
+                </small>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            </div>
+
+            <!-----------------4row-------------->
+            <br>
+            <div class="input">
+                <div class="firstnameIcon">
+                    <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname"
+                        name="firstname" autocomplete="off" required [(ngModel)]="userRegister.firstname"
+                        #firstname="ngModel" [class.is-invalid]="firstname.invalid && firstname.touched"
+                        pattern="[a-zA-Z ]*">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>&nbsp;&nbsp;
+                <div class="lastnameIcon">
+                    <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" name="lastname"
+                        autocomplete="off" required [(ngModel)]="userRegister.lastname" #lastname="ngModel"
+                        [class.is-invalid]="lastname.invalid && lastname.touched" pattern="[a-zA-Z ]*">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <!---------------------5row--------------->
+            <br>
+            <div class="input">
+                <input type="number" class="form-control" placeholder="Phone Number" name="phone" autocomplete="off"
+                    required [(ngModel)]="userRegister.phone" #phone="ngModel"
+                    [class.is-invalid]="phone.invalid && phone.touched">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+
+            <!-----------------------6row--------------->
+            <br>
+            <div class="row">
+                <label>Date Of Birth </label>
+                <input type="date" class="form-control" name="dob" autocomplete="off" required
+                    [(ngModel)]="userRegister.dob" #dob="ngModel" [class.is-invalid]="dob.invalid && dob.touched">
+            </div>
+            <br>
+
+            <!------------------------7row----------------->
+            <div class="row">
+                <label>Address </label> &nbsp;&nbsp;
+                <textarea class="form-control" name="address" autocomplete="off" required
+                    [(ngModel)]="userRegister.address" #address="ngModel"
+                    [class.is-invalid]="address.invalid && address.touched">
+                </textarea>
+            </div>
+            <br>
+
+            <!-------------------------8row------------------>
+            <div class="row">
+                <label>City </label>
+                <select name="Select District" class="form-control" name="city" autocomplete="off" required
+                    [(ngModel)]="userRegister.city" #city="ngModel" [class.is-invalid]="city.invalid && city.touched">
+                    <option value="Nagpur">Select City</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Wardha">Wardha</option>
+                </select>
+            </div>
+            <br>
+
+            <!--------------------------9row------------------------>
+            <div class="row">
+                <label>District </label> &nbsp;&nbsp;
+                <select name="Select District" class="form-control" name="district" autocomplete="off" required
+                    [(ngModel)]="userRegister.district" #district="ngModel"
+                    [class.is-invalid]="district.invalid && district.touched">>
+                    <option value="Nagpur">Select District</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Wardha">Wardha</option>
+                </select>
+            </div>
+            <br>
+
+            <!------------------------10row------------------------>
+            <div class="gender">
+                <label>Gender </label> &nbsp;&nbsp;
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">Female</label>&nbsp;&nbsp;
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">Male</label>
+            </div>
+            <br>
+
+            <!------------------------11row------------------------>
+            <div>
+                <button type="clear" class="button">Clear</button>
+                <button type="submit" [disabled]="register.form.invalid" class="button">Register</button>
+            </div>
+            <br>
+
+            <!------------------------12row------------------------>
+            <a class="login" href="loginlink">Back to login</a>
+            <br><br>
+        </table><br><br>
+    </form>
+</div>

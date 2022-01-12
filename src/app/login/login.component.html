@@ -1,0 +1,57 @@
+<div class="container"><br><br><br>
+    <form #login="ngForm">
+        <table><br>
+            <div class="title">
+                <h1>LOGIN FORM</h1>
+            </div>
+
+            <!----------------1row-------------->
+            <br>
+            <div class="details">
+                <input type="text" class="form-control" placeholder="Enter username" name="username" autocomplete="off"
+                    required [(ngModel)]="userLogin.username" #username="ngModel"
+                    [class.is-invalid]="username.invalid && username.touched">
+                <span *ngIf="username.invalid && username.touched" class="input-group-addon"></span>
+                <small *ngIf="username.invalid && username.touched" class="text-danger">
+                    Username is required
+                </small>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+
+            <!---------------2row------------ -->
+            <br>
+            <div class="details">
+                <input type="text" class="form-control" placeholder="Enter Email" name="email" autocomplete="off"
+                    required [(ngModel)]="userLogin.email" #email="ngModel"
+                    [class.is-invalid]="email.invalid && email.touched">
+                <span *ngIf="email.invalid && email.touched" class="input-group-addon"></span>
+                <small *ngIf="email.invalid && email.touched" class="text-danger">
+                    Email is required
+                </small>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+
+            <!------------------3row ---------------->
+            <br>
+            <div class="details">
+                <input type="password" class="form-control" placeholder="Enter Password" name="password"
+                    autocomplete="off" required [(ngModel)]="userLogin.password" #password="ngModel"
+                    [class.is-invalid]="password.invalid && password.touched">
+                <span *ngIf="password.invalid && password.touched" class="input-group-addon"></span>
+                <small *ngIf="password.invalid && password.touched" class="text-danger">
+                    Password is required
+                </small>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+            </div>
+            
+            <!-----------------4row-------------->
+            <br>
+            <div>
+                <button type="login" [disabled]=login.form.invalid class="button">Login</button>
+            </div><br>
+            <a href="">Forgot Password?</a>
+            <a class="register" href="registrationlink">Registeration here</a>
+            <br>
+        </table>
+    </form>
+</div>
